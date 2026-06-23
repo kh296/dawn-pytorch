@@ -158,7 +158,6 @@ module purge
 module load rhel9/default-dawn
 source /usr/local/dawn/software/external/intel-oneapi/2026.0.0/setvars.sh
 
-#
 # Set level-zero environment variables:
 # https://oneapi-src.github.io/level-zero-spec/level-zero/latest/core/PROG.html#environment-variables
 #
@@ -254,11 +253,6 @@ export CCL_ZE_IPC_EXCHANGE=sockets
 # Specify the maximum number of NICs to be selected.
 # https://uxlfoundation.github.io/oneCCL/env-variables.html#ccl-mnic-count
 #export CCL_MNIC_COUNT=
-
-# Avoid CCL warning:
-# [CCL_WARN] CCL_CONFIGURATION_PATH_modshare=:1 is unknown to and unused by
-# oneCCL code but is present in the environment, check if it is not mistyped.
-unset CCL_CONFIGURATION_PATH_modshare
 EOF
 
 cat <<EOF >>${MACOS_SETUP}
