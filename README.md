@@ -22,7 +22,7 @@ guidance for installing `conda` on Dawn at:
 Installation of PyTorch may be performed
 [via a Slurm job](#21-installation-via-a-slurm-job) or
 [from the command line](#22-installation-from-the-command-line).  As
-installation takes around an hour, the former is recommended
+installation takes 30-60 minutes, the former is recommended
 
 ### 2.1 Installation via a Slurm job
 
@@ -40,7 +40,7 @@ Submit a Slurm job to run the installation script:
 sbatch --account=<project_account> --export=CONDA_INSTALL="~/miniforge3" ./pytorch_install.sh
 ```
 
-Once it starts running, the script should take about ten minutes to
+Once it starts running, the script should take 30-60 minutes to
 complete.  The job output is written to `pytorch_install.log`.  If the
 installation is successful, the last line of the output is the command
 to set up the environment for using PyTorch.  This command references the
@@ -100,3 +100,8 @@ more information, from the `scripts` directory run:
 ```
 ./pytorch_install.sh -h
 ```
+
+The setup script `envs/setup-pytorch-setup.sh`, created during installation,
+sets values for a number of environment variables relevant to using
+PyTorch with Intel GPUs, including for distributed processing.  These
+variables are documented in the script.
