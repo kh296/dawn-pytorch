@@ -27,7 +27,7 @@ installation takes 30-60 minutes, the former is recommended
 ### 2.1 Installation via a Slurm job
 
 On a Dawn login node or compute node, clone this repository,
-and move to the scripts directory:
+and move to the `scripts` directory:
 ```
 git clone https://github.com/kh296/dawn-pytorch
 cd dawn-pytorch/scripts
@@ -49,7 +49,7 @@ file `../envs/pytorch-setup.sh`, created during installation.
 ### 2.2 Installation from the command line
 
 On a Dawn compute node, clone this repository, and move to
-the scripts directory:
+the `scripts` directory:
 ```
 git clone https://github.com/kh296/dawn-pytorch
 cd dawn-pytorch/scripts
