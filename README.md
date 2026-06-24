@@ -107,7 +107,12 @@ PyTorch with Intel GPUs, including for distributed processing.  These
 variables are documented in the script.
 
 The setup script performs all environment setup needed to use PyTorch,
-including making available compatible versions of oneAPI libraries
-and GPU drivers.  Combining with other system scripts and modules for
-environment setup may cause problems.  In particular none of the modules
+including making available compatible versions of oneAPI libraries:
+```
+# Perform environment setup for using PyTorch.
+# Substitue for <setup script> the path to the setup script.
+source <setup script>
+```
+The script generally shouldn't be combined with other system scripts and
+modules for environment setup.  In particular, none of the system modules
 for `conda` setup or for oneAPI setup should be loaded.
