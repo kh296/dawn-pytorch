@@ -105,3 +105,9 @@ The setup script `envs/setup-pytorch-setup.sh`, created during installation,
 sets values for a number of environment variables relevant to using
 PyTorch with Intel GPUs, including for distributed processing.  These
 variables are documented in the script.
+
+The setup script performs all environment setup needed to use PyTorch,
+including making available compatible versions of oneAPI libraries
+and GPU drivers.  Combining with other system scripts and modules for
+environment setup may cause problems.  In particular none of the modules
+for `conda` setup or for oneAPI setup should be loaded.
