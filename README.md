@@ -44,7 +44,7 @@ Once it starts running, the script should take 30-60 minutes to
 complete.  The job output is written to `pytorch_install.log`.  If the
 installation is successful, the last line of the output is the command
 to set up the environment for using PyTorch.  This command references the
-file `../envs/pytorch-setup.sh`, created during installation.
+setup file `../envs/pytorch-setup.sh`, created during installation.
 
 ### 2.2 Installation from the command line
 
@@ -63,18 +63,19 @@ CONDA_INSTALL="~/miniforge3" ./pytorch_install.sh |& tee pytorch_install.log
 
 Output is written both to terminal and to the file `pytorch_install.log`.
 If the installation is successful, the last line of the output is the command
-to set up the environment for using PyTorch.  This command references the file
-`../envs/pytorch-setup.sh`, created during installation.
+to set up the environment for using PyTorch.  This command references the
+setup file `../envs/pytorch-setup.sh`, created during installation.
 
 ## 3. Further information
 
-Installation of `PyTorch` on Dawn is based on the the documentation for
+Installation of `PyTorch` on Dawn is based on the documentation for
 [Getting Started on Intel GPU](https://pytorch.org/docs/stable/notes/get_start_xpu.html).
 
 Support for Intel GPUs in versions of PyTorch prior to 0.2.8 required
 import of two external packages:
 - [intel_extension_for_pytorch](https://github.com/intel/intel-extension-for-pytorch);
-= [oneccl_bindings_for_pytorch](https://github.com/intel/torch-ccl).
+- [oneccl_bindings_for_pytorch](https://github.com/intel/torch-ccl).
+
 In these versions, the backend for distributed processing needed to be
 specified as `"ccl"`.  From PyTorch 0.2.8 onwards, the external packages
 shouldn't be imported, and the backend for distributed processing needs
@@ -83,8 +84,8 @@ see the last item of the [PyTorch 2.8 Release Blog](https://pytorch.org/blog/pyt
 
 The installation script [scripts/pytorch_install.sh](scripts/pytorch_install.sh)
 installs the latest stable versions of `torch`, `torchvision`, `torchaudio`,
-and their dependencies.  If you want to install specific versions, you can
-edit the script to indicate this.  If you want want to install additional
+along with their dependencies.  If you want to install specific versions, you
+can edit the script to indicate this.  If you want to install additional
 packages, the suggested approach is to set up the `conda` environment for
 using PyTorch, and then install the additional packages with `pip` or `conda`.
 For example, to add `pandas`, starting from the `scripts` directory, use:
@@ -104,7 +105,7 @@ more information, from the `scripts` directory run:
 The setup script `envs/setup-pytorch-setup.sh`, created during installation,
 sets values for a number of environment variables relevant to using
 PyTorch with Intel GPUs, including for distributed processing.  These
-variables are documented in the script.
+variables are documented in the setup script.
 
 The setup script performs all environment setup needed to use PyTorch,
 including making available compatible versions of oneAPI libraries:
@@ -113,6 +114,6 @@ including making available compatible versions of oneAPI libraries:
 # Substitue for <setup script> the path to the setup script.
 source <setup script>
 ```
-The script generally shouldn't be combined with other system scripts and
+The script generally shouldn't be combined with system scripts and
 modules for environment setup.  In particular, none of the system modules
 for `conda` setup or for oneAPI setup should be loaded.
