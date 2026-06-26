@@ -18,3 +18,12 @@ for obtaining the PyTorch installation script, an example submission command is:
 # Set CONDA_INSTALL to the path of your conda installation.
 sbatch --partition=1CN192C4G1H_MI300A_Ubuntu22  --cpus-per-gpu=48 --export=CONDA_INSTALL="~/miniforge3" ./pytorch_install.sh
 ```
+
+Installation of PyTorch on AAC6 using
+[scripts/pytorch_install.sh](../scripts/pytorch_install.sh)
+is based on the documentation for
+[PyTorch: Start Locally](https://pytorch.org/get-started/locally/),
+choosing from the installation grid:
+```
+Build: Stable, OS: Linux, Package: Pip, Language: Python, Platform: ROCm
+```
